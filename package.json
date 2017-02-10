@@ -1,0 +1,27 @@
+{
+  "private": true,
+  "devDependencies": {
+    "autosize": "^3.0.17",
+    "elixir-jshint": "^1.2.2",
+    "fastclick": "^1.0.6",
+    "font-awesome": "^4.6.3",
+    "fork-placeholders.js": "^4.0.1",
+    "gsap": "^1.19.0",
+    "gulp": "^3.9.1",
+    "imagesloaded": "^4.1.0",
+    "include-media": "^1.4.6",
+    "laravel-elixir": "^6.0.0-9",
+    "laravel-elixir-browsersync-official": "^1.0.0",
+    "laravel-elixir-eslint": "^4.0.0-1",
+    "laravel-elixir-rollup-official": "^1.0.4",
+    "megatype": "github:geminilabs/megatype",
+    "node-bourbon": "^4.2.8",
+    "normalize.css": "^4.2.0",
+    "photoswipe": "^4.1.1",
+    "responsive-nav": "^1.0.39"
+  },
+  "dependencies": {
+    "gulp-livereload": "^3.8.1",
+    "laravel-elixir-livereload": "^1.1.6"
+  }
+}
