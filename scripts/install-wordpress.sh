@@ -7,6 +7,7 @@ WHITE=`tput setaf 15`
 GREY=`tput setaf 8`
 RED=`tput setaf 9`
 GREEN=`tput setaf 10`
+YELLOW=`tput setaf 3`
 
 check_errors() {
 	ERRORS=()
@@ -92,9 +93,9 @@ echo "Install WordPress                           "
 echo "--------------------------------------------"
 
 # Collect database variables
-read -r -p "Enter the database name [${yellow}${DB_NAME:-$DIR_NAME}${white}]: " DBNAME
-read -r -p "Enter the database user [${yellow}${DB_USER:-dev}${white}]: " DBUSER
-read -r -p "Enter the database password [${yellow}${DB_PASS:-dev}${white}]: " DBPASS
+read -r -p "Enter the database name [${YELLOW}${DB_NAME:-$DIR_NAME}${WHITE}]: " DBNAME
+read -r -p "Enter the database user [${YELLOW}${DB_USER:-dev}${WHITE}]: " DBUSER
+read -r -p "Enter the database password [${YELLOW}${DB_PASS:-dev}${WHITE}]: " DBPASS
 
 DBNAME=${DBNAME:-${DB_NAME:-$DIR_NAME}}
 DBUSER=${DBUSER:-${DB_USER:-dev}}

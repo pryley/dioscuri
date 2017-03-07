@@ -7,8 +7,7 @@
   "authors": [
     {
       "name": "Paul Ryley",
-      "email": "paul@geminilabs.io",
-      "homepage": "https://github.com/geminilabs"
+      "email": "paul@geminilabs.io"
     }
   ],
   "keywords": [
@@ -31,10 +30,6 @@
     },
     {
       "type": "vcs",
-      "url": "https://bitbucket.org/geminilabs/castor.git"
-    },
-    {
-      "type": "vcs",
       "url": "https://bitbucket.org/geminilabs/pollux.git"
     },
     {
@@ -47,10 +42,10 @@
     "composer/installers": "^1.2.0",
     "deployer/deployer": "^4.2.1",
     "geminilabs/blackbox": "dev-master",
-    "geminilabs/castor": "^1.1",
     "geminilabs/pollux": "dev-master",
     "geminilabs/wp-thumb": "dev-master",
     "johnpbloch/wordpress": "^4.7.2",
+    "roots/soil": "^3.7.1",
     "roots/wp-password-bcrypt": "^1.0.0",
     "roots/wp-stage-switcher": "^2.0.0",
     "wp-cli/wp-cli": "^1.1.0",
@@ -73,6 +68,7 @@
       "public/app/mu-plugins/{$name}/": [
         "type:wordpress-muplugin",
         "geminilabs/wp-thumb",
+        "roots/soil",
         "roots/wp-stage-switcher"
       ],
       "public/app/plugins/{$name}/": [
@@ -93,20 +89,14 @@
         "wpackagist-plugin/so-widgets-bundle",
         "wpackagist-plugin/stops-core-theme-and-plugin-updates",
         "wpackagist-plugin/updraftplus"
-      ],
-      "public/app/themes/{$name}/": [
-        "type:wordpress-theme",
-        "geminilabs/castor"
       ]
     },
     "wordpress-install-dir": "public/wp"
   },
   "scripts": {
-    "local-update": [
-      "ln -fhs $(pwd)/theme/public $(pwd)/public/app/themes/geminilabs"
-    ],
     "post-install-cmd": [
-      "sh $(pwd)/scripts/install-wordpress.sh"
+      "sh $(pwd)/scripts/install-wordpress.sh",
+      "sh $(pwd)/scripts/install-castor.sh"
     ],
     "post-update-cmd": []
   }
