@@ -3,6 +3,7 @@
   "scripts": {
     "build": "gulp build --cwd theme --production",
     "dev": "gulp --cwd theme",
+    "images": "gulp images --cwd theme",
     "production": "gulp --cwd theme --production",
     "update": "composer update --working-dir theme",
     "watch": "gulp watch --cwd theme"
