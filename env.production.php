@@ -1,7 +1,7 @@
 <?php
 
 // production | staging | development
-define('WP_ENV', 'development');
+define('WP_ENV', 'production');
 
 define('ENVIRONMENTS', serialize([
 	'production'  => 'https://example.com',
@@ -26,6 +26,6 @@ define('SECURE_AUTH_SALT', 'put your unique phrase here');
 define('LOGGED_IN_SALT',   'put your unique phrase here');
 define('NONCE_SALT',       'put your unique phrase here');
 
-define('SAVEQUERIES',  true);
-define('SCRIPT_DEBUG', true);
-define('WP_DEBUG',     true);
+define('SAVEQUERIES',  false);
+define('SCRIPT_DEBUG', false);
+define('WP_DEBUG',     false);

@@ -1,0 +1,34 @@
+application: example
+clear_paths:
+  - deploy
+  - scripts
+  - theme/+
+  - theme/gulpfile.js
+  - theme/package.json
+  - theme/yarn.lock
+  - deploy.php
+deploy_path: /srv/users/serverpilot/apps/example
+local_path: ~/Sites/example
+local_url: example.dev
+public_dir: public
+repository: git@bitbucket.org:dioscuri/example.git
+shared_dirs:
+  - public/app/updraft
+  - public/app/uploads
+shared_files:
+  - public/.htaccess
+  - public/robots.txt
+uploads_local_path: public/app/uploads
+uploads_remote_path: shared/public/app/uploads
+wp_cli_path: public/wp
+writable_dirs:
+  - public/app/uploads
+
+composer_action: update
+default_stage: staging
+keep_releases: 5
+rsync_options: -avz --progress -e 'ssh -p {{server.port}}' --exclude=temp/ --exclude=cache/ --exclude=.DS_Store
+ssh_multiplexing: true
+ssh_type: native
+use_relative_symlink: false
+writable_mode: chmod

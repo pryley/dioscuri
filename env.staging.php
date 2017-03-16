@@ -1,7 +1,7 @@
 <?php
 
 // production | staging | development
-define('WP_ENV', 'development');
+define('WP_ENV', 'staging');
 
 define('ENVIRONMENTS', serialize([
 	'production'  => 'https://example.com',
