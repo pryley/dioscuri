@@ -9,14 +9,10 @@ namespace Deployer;
 desc( 'Creating symlink to release' );
 task( 'deploy:symlink', function() {
     if( run( 'if [[ "$(man mv)" =~ "--no-target-directory" ]]; then echo "true"; fi' )->toBool() ) {
-        // [1,2]
-        // We are also only linking the {{public_dir}} in the release dir, NOT the whole release
         run( 'mv -T {{deploy_path}}/release/{{public_dir}} {{deploy_path}}/{{public_dir}}' );
     }
     else {
-        // [1,2]
-        // We are also only linking the {{public_dir}} in the release dir, NOT the whole release
-        run( '{{bin/symlink}} {{release_path}}/{{public_dir}} {{deploy_path}}/{{public_dir}}' );
+        run( '{{bin/symlink}} {{release_path}}/{{public_dir}} {{deploy_path}}' );
         run( 'cd {{deploy_path}} && rm release' );
     }
 });

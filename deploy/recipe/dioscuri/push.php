@@ -30,7 +30,10 @@ task( 'push:database', function() {
 		runLocally( 'wp db export - --path={{wp_cli_path}} | gzip > wpcli_database.sql.gz' );
 		upload( 'wpcli_database.sql.gz', get( 'deploy_path' ) . '/wpcli_database.sql.gz' );
 		run( "gunzip < wpcli_database.sql.gz | {{deploy_path}}/releases/$release/vendor/bin/wp db import - --path={{deploy_path}}/{{wp_cli_path}}" );
-		run( "{{deploy_path}}/releases/$release/vendor/bin/wp search-replace ://{{local_url}} ://{{server.host}} --skip-columns=guid --path={{deploy_path}}/{{wp_cli_path}}" );
+		$remoteUrl = Context::get()->getServer()->getConfiguration()->getName() == 'production'
+			? 'https://{{server.host}}'
+			: 'http://{{server.host}}';
+		run( "{{deploy_path}}/releases/$release/vendor/bin/wp search-replace 'https?:\/\/({{local_url}}|localhost(:[0-9]{4})?)' '$remoteUrl' --regex --skip-columns=guid --path={{wp_cli_path}}" );
 		run( "echo '$date, Imported database' >> .dep/revision.log" );
 	}
 });

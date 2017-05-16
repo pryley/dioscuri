@@ -3,8 +3,12 @@ clear_paths:
   - deploy
   - scripts
   - theme/+
+  - theme/.gitignore
+  - theme/.gitattributes
   - theme/gulpfile.js
+  - theme/LICENSE
   - theme/package.json
+  - theme/README.md
   - theme/yarn.lock
   - deploy.php
 deploy_path: /srv/users/serverpilot/apps/example
@@ -26,6 +30,7 @@ writable_dirs:
 
 composer_action: update
 default_stage: staging
+git_tty: true
 keep_releases: 5
 rsync_options: -avz --progress -e 'ssh -p {{server.port}}' --exclude=temp/ --exclude=cache/ --exclude=.DS_Store
 ssh_multiplexing: true

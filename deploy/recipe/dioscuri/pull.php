@@ -10,8 +10,9 @@ task( 'pull:uploads', function() {
 		writeln( 'Pulling remote uploads to the local machine.' );
 	}
 	$server = Context::get()->getServer()->getConfiguration();
+	$user = $server->getUser();
     $date = date( 'Y-m-d H:i' );
-	runLocally( "rsync {{rsync_options}} {{server.user}}@{{server.host}}:{{deploy_path}}/{{uploads_remote_path}}/ {{local_path}}/{{uploads_local_path}}/", 1200 );
+	runLocally( "rsync {{rsync_options}} $user@{{server.host}}:{{deploy_path}}/{{uploads_remote_path}}/ {{local_path}}/{{uploads_local_path}}/", 1200 );
 	run( "echo '$date, Pushed uploads to local' >> {{deploy_path}}/.dep/revision.log" );
 });
 
@@ -28,7 +29,7 @@ task( 'pull:database', function() {
 		run( "{{deploy_path}}/releases/$release/vendor/bin/wp db export - --path={{deploy_path}}/{{wp_cli_path}} | gzip > wpcli_database.sql.gz" );
 		download( 'wpcli_database.sql.gz', get( 'deploy_path' ) . '/wpcli_database.sql.gz' );
 		runLocally( 'gunzip < wpcli_database.sql.gz | wp db import - --path={{wp_cli_path}}' );
-		runLocally( 'wp search-replace ://{{server.host}} ://{{local_url}} --skip-columns=guid --path={{wp_cli_path}}' );
+		runLocally( "wp search-replace 'https?:\/\/{{server.host}}' 'http://{{local_url}}' --regex --skip-columns=guid --path={{wp_cli_path}}" );
 		run( "echo '$date, Exported database' >> .dep/revision.log" );
 	}
 });

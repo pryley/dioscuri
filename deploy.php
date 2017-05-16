@@ -17,3 +17,4 @@ after( 'deploy:failed', 'deploy:unlock' );
 // dep push [stage]      - Push uploads and database to remote
 // dep rollback [stage]  - Rollback to previous release
 // dep setup [stage]     - Setup the server
+// dep theme [stage]     - Rsync the theme

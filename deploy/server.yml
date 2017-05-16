@@ -1,5 +1,5 @@
 staging:
-    host: example.com
+    host: staging.example.com
     port: 1234
     user: serverpilot
     identity_file:

@@ -23,9 +23,9 @@ function configList( $file ) {
  */
 set( 'current_path', function() {
 	$link = run( "readlink {{deploy_path}}/{{public_dir}}" )->toString();
-	return substr( $link, 0, 1 ) === '/'
-		? $link
-		: get( 'deploy_path' ) . '/' . $link;
+	return substr( $link, 0, 1 ) !== '/'
+		? sprintf( '%s/%s', get( 'deploy_path' ), $link )
+		: $link;
 });
 
 /**
