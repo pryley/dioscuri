@@ -7,12 +7,12 @@ install_castor() {
 	if [ ! -d $DIR_THEME ]; then
 		git clone https://github.com/geminilabs/castor theme
 		rm -rf "$DIR_THEME/.git"
-		ln -fhs $DIR_THEME "$DIR_DEST/$THEME"
 		cd $DIR_THEME
 		composer install
 		yarn
 		gulp build
 	fi
+	ln -fhs $DIR_THEME "$DIR_DEST/$THEME"
 }
 
 DIR="$(cd "$(dirname "$(dirname "${BASH_SOURCE[0]}")")"; pwd)"
