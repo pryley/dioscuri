@@ -11,6 +11,7 @@ task( 'deploy:theme', function() {
 	run( 'cd {{release_path}}/theme && {{env_vars}} {{bin/composer}} {{composer_options}}' );
 	run( "mkdir -p {{release_path}}/theme/assets" );
 	runLocally( "rsync {{rsync_options}} {{local_path}}/theme/assets/ $user@{{server.host}}:{{release_path}}/theme/assets", 600 );
+	runLocally( "rsync {{rsync_options}} -k $exclude {{local_path}}/pollux.yml $user@{{server.host}}:{{deploy_path}}/pollux.yml" );
 	run( "mv -f {{release_path}}/theme {{release_path}}/public/app/themes/{{application}}" );
 });
 
@@ -20,4 +21,5 @@ task( 'theme', function() {
 	$user = $server->getUser();
 	$exclude = "--exclude=.git/ --exclude=+/ --exclude=node_modules/ --exclude=.* --exclude=README.md --exclude=LICENSE --exclude=gulpfile.js --exclude=package.json --exclude=yarn.lock";
 	runLocally( "rsync {{rsync_options}} -k $exclude {{local_path}}/theme/ $user@{{server.host}}:{{deploy_path}}/public/app/themes/{{application}}", 600 );
+	runLocally( "rsync {{rsync_options}} -k $exclude {{local_path}}/pollux.yml $user@{{server.host}}:{{deploy_path}}/pollux.yml" );
 });

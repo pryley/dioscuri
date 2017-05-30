@@ -22,7 +22,6 @@ shared_dirs:
 shared_files:
   - public/.htaccess
   - public/robots.txt
-  - pollux.yml
 uploads_local_path: public/app/uploads
 uploads_remote_path: shared/public/app/uploads
 wp_cli_path: public/wp
