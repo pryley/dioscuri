@@ -12,6 +12,7 @@ temp/
 /public/wp
 /vendor
 auth.json
+composer.lock
 env.php
 
 /public/app/languages
