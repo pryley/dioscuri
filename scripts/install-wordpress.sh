@@ -69,6 +69,7 @@ install_wp() {
 		wp user meta update 1 show_welcome_panel 0 $WP_PATH
 		wp widget deactivate $(wp widget list sidebar-1 --fields=id --format=ids $WP_PATH) $WP_PATH
 		# activate plugins
+		wp plugin activate autodescription $WP_PATH
 		wp plugin activate blackbox $WP_PATH
 		wp plugin activate imsanity $WP_PATH
 		wp plugin activate meta-box $WP_PATH

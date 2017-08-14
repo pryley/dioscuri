@@ -2,10 +2,9 @@
   "private": true,
   "scripts": {
     "build": "gulp build --cwd theme --production",
-    "dev": "gulp --cwd theme",
+    "composer": "composer update --working-dir theme",
+    "gulp": "gulp --cwd theme",
     "images": "gulp images --cwd theme",
-    "production": "gulp --cwd theme --production",
-    "update": "composer update --working-dir theme",
     "watch": "gulp watch --cwd theme"
   }
 }
