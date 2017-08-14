@@ -1,5 +1,6 @@
 application: example
 clear_paths:
+  - +
   - deploy
   - scripts
   - theme/+
@@ -11,7 +12,6 @@ clear_paths:
   - theme/README.md
   - theme/yarn.lock
   - deploy.php
-deploy_path: /srv/users/serverpilot/apps/example
 local_path: ~/Sites/example
 local_url: example.dev
 public_dir: public

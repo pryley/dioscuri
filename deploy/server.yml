@@ -9,6 +9,7 @@ staging:
     forward_agent: true
     stage: staging
     branch: master
+    deploy_path: /srv/users/serverpilot/apps/staging-example
 
 production:
     host: example.com
@@ -21,3 +22,4 @@ production:
     forward_agent: true
     stage: production
     branch: master
+    deploy_path: /srv/users/serverpilot/apps/example
