@@ -6,8 +6,25 @@ remove_wordpress_footer: false
 remove_wordpress_menu: false
 
 archives: []
+
 columns: []
+
 metaboxes: []
+
 post_types: []
-settings: []
+
+settings:
+  services:
+    title: 3rd Party Services
+    fields:
+      google_analytics:
+        type: text
+        name: Google Analytics ID
+        desc: <a href="https://www.google.com/analytics/" target="_blank">What is this?</a>
+        placeholder: UA-XXXXXXXX-Y
+      google_maps:
+        type: text
+        name: Google Maps API key
+        desc: <a href="https://developers.google.com/maps/documentation/javascript/get-api-key" target="_blank">What is this?</a>
+
 taxonomies: []
