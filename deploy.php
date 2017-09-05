@@ -6,11 +6,12 @@ require 'recipe/common.php';
 require __DIR__ . '/deploy/recipe/common.php';
 require __DIR__ . '/deploy/tasks/dioscuri.php';
 
-configList( 'deploy/config.yml' );
-serverList( 'deploy/server.yml' );
+configuration( 'deploy/config.yml' );
+inventory( 'deploy/hosts.yml' );
 
 after( 'deploy:failed', 'deploy:unlock' );
 
+// dep ssh
 // dep deploy [stage]    - Deploy your project
 // dep firstrun [stage]  - Deploy for the first time
 // dep pull [stage]      - Pull uploads and database to local

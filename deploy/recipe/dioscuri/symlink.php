@@ -1,18 +1,19 @@
 <?php
 
+/**
+ * Replaces current with {{current_dir}}
+ */
+
 namespace Deployer;
 
-/**
- * 1. Change "current" to {{public_dir}}
- * 2. Append {{public_dir}} to release path
- */
-desc( 'Creating symlink to release' );
-task( 'deploy:symlink', function() {
-    if( run( 'if [[ "$(man mv)" =~ "--no-target-directory" ]]; then echo "true"; fi' )->toBool() ) {
-        run( 'mv -T {{deploy_path}}/release/{{public_dir}} {{deploy_path}}/{{public_dir}}' );
-    }
-    else {
-        run( '{{bin/symlink}} {{release_path}}/{{public_dir}} {{deploy_path}}' );
-        run( 'cd {{deploy_path}} && rm release' );
+desc('Creating symlink to release');
+task('deploy:symlink', function () {
+    if (get('use_atomic_symlink')) {
+        run("mv -T {{deploy_path}}/release {{deploy_path}}/{{current_dir}}");
+    } else {
+        // Atomic symlink does not supported.
+        // Will use simple≤ two steps switch.
+        run("cd {{deploy_path}} && {{bin/symlink}} {{release_path}} {{current_dir}}"); // Atomic override symlink.
+        run("cd {{deploy_path}} && rm release"); // Remove release link.
     }
 });

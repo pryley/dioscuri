@@ -2,29 +2,23 @@
 
 namespace Deployer;
 
-use Deployer\Task\Context;
-
 desc( 'Installing theme vendors' );
 task( 'deploy:theme_vendors', function() {
-	run( 'cd {{release_path}}/theme && {{env_vars}} {{bin/composer}} {{composer_options}}' );
+	run( 'cd {{release_path}}/theme && {{bin/composer}} {{composer_options}}' );
 });
 
 desc( 'Deploy theme' );
 task( 'deploy:theme', function() {
-	$server = Context::get()->getServer()->getConfiguration();
-	$user = $server->getUser();
+	$rsync_options = ['options' => get( 'rsync_options' )];
 	run( "mkdir -p {{release_path}}/theme/assets" );
-	$exclude = "--exclude=.git/ --exclude=+/ --exclude=node_modules/ --exclude=.* --exclude=README.md --exclude=LICENSE --exclude=gulpfile.js --exclude=package.json --exclude=yarn.lock";
-	runLocally( "rsync {{rsync_options}} {{local_path}}/theme/assets/ $user@{{server.host}}:{{release_path}}/theme/assets", 600 );
-	runLocally( "rsync {{rsync_options}} -k $exclude {{local_path}}/pollux.yml $user@{{server.host}}:{{deploy_path}}/pollux.yml" );
+	upload( '{{local_path}}/theme/assets/', '{{release_path}}/theme/assets', $rsync_options );
+	upload( '{{local_path}}/pollux.yml', '{{release_path}}/pollux.yml', $rsync_options );
 	run( "mv -f {{release_path}}/theme {{release_path}}/public/app/themes/{{application}}" );
 });
 
 desc( 'Deploy only the theme' );
 task( 'theme', function() {
-	$server = Context::get()->getServer()->getConfiguration();
-	$user = $server->getUser();
-	$exclude = "--exclude=.git/ --exclude=+/ --exclude=node_modules/ --exclude=.* --exclude=README.md --exclude=LICENSE --exclude=gulpfile.js --exclude=package.json --exclude=yarn.lock";
-	runLocally( "rsync {{rsync_options}} -k $exclude {{local_path}}/theme/ $user@{{server.host}}:{{deploy_path}}/public/app/themes/{{application}}", 600 );
-	runLocally( "rsync {{rsync_options}} -k $exclude {{local_path}}/pollux.yml $user@{{server.host}}:{{deploy_path}}/pollux.yml" );
+	$rsync_options = ['options' => get( 'rsync_options' )];
+	upload( '{{local_path}}/theme/', '{{release_path}}/public/app/themes/{{application}}', $rsync_options );
+	upload( '{{local_path}}/pollux.yml', '{{release_path}}/pollux.yml', $rsync_options );
 });

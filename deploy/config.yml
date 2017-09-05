@@ -1,4 +1,11 @@
 application: example
+current_dir: current
+local_path: ~/Sites/example
+local_url: example.dev
+repository: git@bitbucket.org:dioscuri/example.git
+uploads_local_path: public/app/uploads
+uploads_remote_path: shared/public/app/uploads
+
 clear_paths:
   - +
   - deploy
@@ -12,28 +19,38 @@ clear_paths:
   - theme/README.md
   - theme/yarn.lock
   - deploy.php
-local_path: ~/Sites/example
-local_url: example.dev
-public_dir: public
-repository: git@bitbucket.org:dioscuri/example.git
+rsync_options:
+  - -k
+  - --exclude=+/
+  - --exclude=.*
+  - --exclude=.DS_Store
+  - --exclude=.git/
+  - --exclude=cache/
+  - --exclude=gulpfile.js
+  - --exclude=LICENSE
+  - --exclude=node_modules/
+  - --exclude=package.json
+  - --exclude=README.md
+  - --exclude=temp/
+  - --exclude=vendors/
+  - --exclude=yarn.lock
 shared_dirs:
   - public/app/updraft
   - public/app/uploads
 shared_files:
   - public/.htaccess
   - public/robots.txt
-uploads_local_path: public/app/uploads
-uploads_remote_path: shared/public/app/uploads
-wp_cli_path: public/wp
 writable_dirs:
   - public/app/uploads
 
+bin/composer: /usr/bin/composer
 composer_action: update
+config_file: ~/.ssh/config
 default_stage: staging
 git_tty: true
 keep_releases: 5
-rsync_options: -avz --progress -e 'ssh -p {{server.port}}' --exclude=temp/ --exclude=cache/ --exclude=.DS_Store
 ssh_multiplexing: true
 ssh_type: native
 use_relative_symlink: false
+wp_cli_path: public/wp
 writable_mode: chmod
