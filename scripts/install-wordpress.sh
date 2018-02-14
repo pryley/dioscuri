@@ -40,6 +40,8 @@ get_config() {
 
 set_config() {
 	# perl -i -wne 'print unless /(AUTH_KEY|SECURE_AUTH_KEY|LOGGED_IN_KEY|NONCE_KEY|AUTH_SALT|SECURE_AUTH_SALT|LOGGED_IN_SALT|NONCE_SALT)/' $ENV_FILE
+	perl -i -pe "s|example|$DIR_NAME|g" $DIR/deploy/config.yml
+	perl -i -pe "s|example|$DIR_NAME|g" $DIR/deploy/hosts.yml
 	perl -i -pe "s|example|$DIR_NAME|g" $ENV_FILE
 	perl -i -pwe "/DB_NAME/ && s|'${DB_NAME}'|'${DBNAME}'|" $ENV_FILE
 	perl -i -pwe "/DB_USER/ && s|'${DB_USER}'|'${DBUSER}'|" $ENV_FILE
