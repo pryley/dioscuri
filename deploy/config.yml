@@ -1,7 +1,7 @@
 application: example
 current_dir: current
 local_path: ~/Sites/example
-local_url: example.dev
+local_url: example.test
 repository: git@bitbucket.org:dioscuri/example.git
 uploads_local_path: public/app/uploads
 uploads_remote_path: shared/public/app/uploads
