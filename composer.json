@@ -25,11 +25,11 @@
       "url": "https://wpackagist.org"
     },
     {
-      "type": "vcs",
+      "type": "git",
       "url": "https://bitbucket.org/geminilabs/blackbox.git"
     },
     {
-      "type": "vcs",
+      "type": "git",
       "url": "https://bitbucket.org/geminilabs/wp-thumb.git"
     }
   ],

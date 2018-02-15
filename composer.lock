@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "caff52a0f168478f94b8ad8ed01636fe",
+    "content-hash": "582803d68925e8b1535f39be3f90977d",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -533,16 +533,16 @@
         },
         {
             "name": "geminilabs/wp-password-bcrypt",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/geminilabs/wp-password-bcrypt.git",
-                "reference": "5cecd2e98ccc3193443cc5c5db9b3bc7abed5ffa"
+                "reference": "14ce80cbd4c3338234a81a216ca73997c12d3868"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/geminilabs/wp-password-bcrypt/zipball/5cecd2e98ccc3193443cc5c5db9b3bc7abed5ffa",
-                "reference": "5cecd2e98ccc3193443cc5c5db9b3bc7abed5ffa",
+                "url": "https://api.github.com/repos/geminilabs/wp-password-bcrypt/zipball/14ce80cbd4c3338234a81a216ca73997c12d3868",
+                "reference": "14ce80cbd4c3338234a81a216ca73997c12d3868",
                 "shasum": ""
             },
             "require": {
@@ -555,7 +555,7 @@
                 "phpunit/phpunit": "^4.8.23|^5.2.9",
                 "squizlabs/php_codesniffer": "^2.5.1"
             },
-            "type": "library",
+            "type": "wordpress-plugin",
             "autoload": {
                 "files": [
                     "wp-password-bcrypt.php"
@@ -586,7 +586,7 @@
             "keywords": [
                 "wordpress wp bcrypt password"
             ],
-            "time": "2016-03-01T16:27:06+00:00"
+            "time": "2018-02-15T19:31:22+00:00"
         },
         {
             "name": "geminilabs/wp-thumb",
