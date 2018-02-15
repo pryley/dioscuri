@@ -38,10 +38,10 @@
     "composer/installers": "^1.5.0",
     "deployer/deployer": "^6.0.5",
     "geminilabs/blackbox": "dev-master",
+    "geminilabs/wp-password-bcrypt": "^1.0.1",
     "geminilabs/wp-thumb": "dev-master",
     "johnpbloch/wordpress": "^4.9.4",
     "roots/soil": "^3.7.2",
-    "roots/wp-password-bcrypt": "^1.0.0",
     "roots/wp-stage-switcher": "^2.0.0",
     "wp-cli/wp-cli": "^1.2.1",
     "wpackagist-plugin/autodescription": "^3.0.3",
@@ -68,9 +68,9 @@
     "installer-paths": {
       "public/app/mu-plugins/{$name}/": [
         "type:wordpress-muplugin",
+        "geminilabs/wp-password-bcrypt",
         "geminilabs/wp-thumb",
         "roots/soil",
-        "roots/wp-password-bcrypt",
         "roots/wp-stage-switcher"
       ],
       "public/app/plugins/{$name}/": [
