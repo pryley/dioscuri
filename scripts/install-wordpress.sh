@@ -71,7 +71,7 @@ install_wp() {
 		wp widget deactivate $(wp widget list sidebar-1 --fields=id --format=ids $WP_PATH) $WP_PATH
 		# activate plugins
 		wp plugin activate autodescription $WP_PATH
-		wp plugin activate blackbox $WP_PATH
+		wp plugin activate blackbar $WP_PATH
 		wp plugin activate imsanity $WP_PATH
 		wp plugin activate meta-box $WP_PATH
 		wp plugin activate pollux $WP_PATH

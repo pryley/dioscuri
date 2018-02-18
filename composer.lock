@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "582803d68925e8b1535f39be3f90977d",
+    "content-hash": "19aec8d5583352bdf318751ecd58feac",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -492,44 +492,49 @@
             "time": "2017-07-03T06:55:29+00:00"
         },
         {
-            "name": "geminilabs/blackbox",
-            "version": "dev-master",
+            "name": "geminilabs/blackbar",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
-                "url": "https://bitbucket.org/geminilabs/blackbox.git",
-                "reference": "1207679226a3f3413f870b0ff258973d154c9ac2"
+                "url": "https://github.com/geminilabs/blackbar.git",
+                "reference": "60c8b85de2a1cb98f276e37f069f92f7b659ad35"
             },
-            "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/geminilabs/blackbox/get/1207679226a3f3413f870b0ff258973d154c9ac2.zip",
-                "reference": "1207679226a3f3413f870b0ff258973d154c9ac2",
-                "shasum": ""
+            "archive": {
+                "exclude": [
+                    "/+",
+                    "/tests",
+                    "/.*",
+                    "/*.md",
+                    "/*.js",
+                    "/*.json",
+                    "/*.lock",
+                    "/*.sh",
+                    "/*.xml"
+                ]
             },
             "require": {
-                "composer/installers": "~1.0",
+                "composer/installers": "^1.5.0",
                 "php": ">=5.4"
             },
             "type": "wordpress-plugin",
             "license": [
-                "MIT"
+                "GPL3"
             ],
             "authors": [
-                "gwin",
                 {
                     "name": "Paul Ryley",
                     "email": "paul@geminilabs.io"
                 }
             ],
-            "description": "BlackBox collects and displays useful debug information (errors, executed queries, globals, profiler).",
-            "homepage": "https://bitbucket.org/geminilabs/blackbox",
+            "description": "BlackBar is a plugin for WordPress developers. It collects and displays errors, executed queries, globals, templates, and provides a profiler.",
             "keywords": [
+                "blackbar",
+                "debug bar",
+                "debugging",
                 "plugin",
                 "wordpress"
             ],
-            "support": {
-                "source": "https://bitbucket.org/geminilabs/blackbox/src/1207679226a3f3413f870b0ff258973d154c9ac2/?at=master"
-            },
-            "time": "2017-05-23T01:08:23+00:00"
+            "time": "2018-02-18T07:36:59+00:00"
         },
         {
             "name": "geminilabs/wp-password-bcrypt",
@@ -590,47 +595,46 @@
         },
         {
             "name": "geminilabs/wp-thumb",
-            "version": "dev-master",
+            "version": "0.11",
             "source": {
                 "type": "git",
-                "url": "https://bitbucket.org/geminilabs/wp-thumb.git",
-                "reference": "c52e90fad3ab24cbb0b7e37cad745e70c4abfda2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/geminilabs/wp-thumb/get/c52e90fad3ab24cbb0b7e37cad745e70c4abfda2.zip",
-                "reference": "c52e90fad3ab24cbb0b7e37cad745e70c4abfda2",
-                "shasum": ""
+                "url": "https://github.com/geminilabs/WPThumb.git",
+                "reference": "e479e91c1979992c92418a4a0583a34f90081666"
             },
             "require": {
-                "composer/installers": "~1.0",
+                "composer/installers": "^1.5.0",
                 "php": ">=5.4"
             },
             "type": "wordpress-plugin",
+            "autoload": {
+                "classmap": [
+                    "wpthumb.php"
+                ]
+            },
             "license": [
-                "MIT"
+                "GPLv2+"
             ],
             "authors": [
-                "humanmade",
-                "joehoyle",
-                "mattheu",
-                "tcrsavage",
-                "willmot",
+                {
+                    "name": "Human Made Limited",
+                    "email": "hello@humanmade.co.uk",
+                    "homepage": "http://humanmade.co.uk"
+                },
                 {
                     "name": "Paul Ryley",
                     "email": "paul@geminilabs.io"
                 }
             ],
-            "description": "An on-demand image generation replacement for WordPress' image resizing.",
-            "homepage": "https://bitbucket.org/geminilabs/wp-thumb",
+            "description": "An on-demand image generation replacement for WordPress image resizing.",
+            "homepage": "https://github.com/geminilabs/WPThumb",
             "keywords": [
                 "plugin",
                 "wordpress"
             ],
             "support": {
-                "source": "https://bitbucket.org/geminilabs/wp-thumb/src/c52e90fad3ab24cbb0b7e37cad745e70c4abfda2/?at=v0.11.3"
+                "issues": "https://github.com/geminilabs/WPThumb/issues"
             },
-            "time": "2017-10-10T22:41:17+00:00"
+            "time": "2018-02-18T22:32:55+00:00"
         },
         {
             "name": "jeremykendall/php-domain-parser",
@@ -4279,10 +4283,7 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "geminilabs/blackbox": 20,
-        "geminilabs/wp-thumb": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

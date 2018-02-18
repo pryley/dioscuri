@@ -26,20 +26,20 @@
     },
     {
       "type": "git",
-      "url": "https://bitbucket.org/geminilabs/blackbox.git"
+      "url": "https://github.com/geminilabs/blackbar.git"
     },
     {
       "type": "git",
-      "url": "https://bitbucket.org/geminilabs/wp-thumb.git"
+      "url": "https://github.com/geminilabs/WPThumb.git"
     }
   ],
   "require": {
     "php": ">=5.6",
     "composer/installers": "^1.5.0",
     "deployer/deployer": "^6.0.5",
-    "geminilabs/blackbox": "dev-master",
+    "geminilabs/blackbar": "^1.0.0",
     "geminilabs/wp-password-bcrypt": "^1.0.1",
-    "geminilabs/wp-thumb": "dev-master",
+    "geminilabs/wp-thumb": "^0.11",
     "johnpbloch/wordpress": "^4.9.4",
     "roots/soil": "^3.7.2",
     "roots/wp-stage-switcher": "^2.0.0",
