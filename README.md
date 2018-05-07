@@ -10,8 +10,7 @@ This is a package to quickly setup a local WordPress installation on a Mac using
 
 1. git clone https://github.com/geminilabs/dioscuri.git [projectdir]
 2. cd [projectdir]
-3. rm -rf .git && git init .
-4. composer install
+3. composer install
 
 ## What's Installed
 
