@@ -1,4 +1,5 @@
 #!/bin/sh
+# v1.0.1
 
 BOLD=`tput bold`
 UNDERLINE=`tput smul`
@@ -31,7 +32,7 @@ check_errors() {
 
 get_config() {
 	if [ ! -f $ENV_FILE ]; then
-		cp $DIR/env.example.php $ENV_FILE
+		cp $PWD/env.example.php $ENV_FILE
 	fi
 	DB_NAME=$(perl -lne 'm{DB_NAME.*?([\w.-]+)} and print $1' $ENV_FILE)
 	DB_USER=$(perl -lne 'm{DB_USER.*?([\w.-]+)} and print $1' $ENV_FILE)
@@ -40,8 +41,8 @@ get_config() {
 
 set_config() {
 	# perl -i -wne 'print unless /(AUTH_KEY|SECURE_AUTH_KEY|LOGGED_IN_KEY|NONCE_KEY|AUTH_SALT|SECURE_AUTH_SALT|LOGGED_IN_SALT|NONCE_SALT)/' $ENV_FILE
-	perl -i -pe "s|example|$DIR_NAME|g" $DIR/deploy/config.yml
-	perl -i -pe "s|example|$DIR_NAME|g" $DIR/deploy/hosts.yml
+	perl -i -pe "s|example|$DIR_NAME|g" $PWD/deploy/config.yml
+	perl -i -pe "s|example|$DIR_NAME|g" $PWD/deploy/hosts.yml
 	perl -i -pe "s|example|$DIR_NAME|g" $ENV_FILE
 	perl -i -pwe "/DB_NAME/ && s|'${DB_NAME}'|'${DBNAME}'|" $ENV_FILE
 	perl -i -pwe "/DB_USER/ && s|'${DB_USER}'|'${DBUSER}'|" $ENV_FILE
@@ -82,10 +83,9 @@ install_wp() {
 
 check_errors
 
-DIR="$(cd "$(dirname "$(dirname "${BASH_SOURCE[0]}")")" ; pwd)"
-DIR_NAME="$(basename "${DIR}")"
-ENV_FILE=$DIR/env.php
-WP_CORE_DIR="$DIR/public/wp"
+DIR_NAME=${PWD##*/}
+ENV_FILE=$PWD/env.php
+WP_CORE_DIR="$PWD/public/wp"
 WP_PATH='--path=public/wp'
 
 get_config

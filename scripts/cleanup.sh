@@ -1,4 +1,5 @@
 #!/bin/sh
+# v1.0.1
 
 DIR="$(cd "$(dirname "$(dirname "${BASH_SOURCE[0]}")")" ; pwd)"
 
