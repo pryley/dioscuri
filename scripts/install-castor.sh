@@ -13,8 +13,6 @@ install_castor() {
 		rm -rf "$DIR_THEME/.git"
 		cd $DIR_THEME
 		composer install
-		npm install
-		gulp build
 	fi
 	ln -fhs $DIR_THEME "$DIR_DEST/$THEME"
 }
