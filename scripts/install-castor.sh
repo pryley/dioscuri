@@ -9,7 +9,7 @@ YELLOW=`tput setaf 3`
 
 install_castor() {
 	if [ ! -d $DIR_THEME ]; then
-		git clone https://github.com/geminilabs/castor theme
+		git clone https://github.com/pryley/castor theme
 		rm -rf "$DIR_THEME/.git"
 		cd $DIR_THEME
 		composer install

@@ -1,5 +1,5 @@
 {
-  "name": "geminilabs/dioscuri",
+  "name": "pryley/dioscuri",
   "type": "project",
   "license": "GPLv3",
   "description": "WordPress boilerplate with castor and pollux",
@@ -11,10 +11,10 @@
     }
   ],
   "keywords": [
-    "dioscuri", "geminilabs", "wordpress", "composer", "deployer"
+    "dioscuri", "pryley", "pryley", "geminilabs", "wordpress", "composer", "deployer"
   ],
   "support": {
-    "issues": "https://github.com/geminilabs/dioscuri/issues"
+    "issues": "https://github.com/pryley/dioscuri/issues"
   },
   "config": {
     "preferred-install": "dist"
@@ -36,7 +36,7 @@
     "roots/wp-stage-switcher": "^2.0.0",
     "wp-cli/wp-cli": "^1.5.1",
     "wpackagist-plugin/autodescription": "^3.0.6",
-    "wpackagist-plugin/blackbar": "^1.2.0",
+    "wpackagist-plugin/blackbar": "^2.1.2",
     "wpackagist-plugin/disable-comments": "^1.7.1",
     "wpackagist-plugin/imsanity": "^2.3.10",
     "wpackagist-plugin/machete": "^3.1.2",

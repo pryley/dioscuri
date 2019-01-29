@@ -8,14 +8,14 @@ This is a package to quickly setup a local WordPress installation on a Mac using
 
 ## Installation
 
-1. git clone https://github.com/geminilabs/dioscuri.git [projectdir]
+1. git clone https://github.com/pryley/dioscuri.git [projectdir]
 2. cd [projectdir]
 3. composer install
 
 ## What's Installed
 
 The following plugins are installed:
-- [BlackBox Debug Bar](https://bitbucket.org/geminilabs/blackbox) @activated
+- [Black Bar]https://wordpress.org/plugins/blackbar/ @activated
 - [Disable Comments](https://wordpress.org/plugins/disable-comments/)
 - [Easy Updates Manager](https://wordpress.org/plugins/stops-core-theme-and-plugin-updates)
 - [Imsanity](https://wordpress.org/plugins/imsanity/) @activated
@@ -42,8 +42,8 @@ The following must-use plugins are installed:
 - [Register Theme Directory](https://github.com/roots/bedrock/blob/master/web/app/mu-plugins/register-theme-directory.php)
 - [Soil](https://github.com/roots/soil)
 - [Stage Switcher](https://github.com/roots/wp-stage-switcher)
-- [WP Password bcrypt](https://github.com/roots/wp-password-bcrypt)
-- [WP Thumb](https://bitbucket.org/geminilabs/wp-thumb)
+- [WP Password bcrypt](https://github.com/geminilabs/wp-password-bcrypt)
+- [WP Thumb](https://github.com/geminilabs/wp-thumb)
 
 The following boilerplate theme is installed:
-- [Castor](https://github.com/geminilabs/castor)
+- [Castor](https://github.com/pryley/castor)
