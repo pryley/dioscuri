@@ -15,14 +15,15 @@ task( 'pull:uploads', function() {
 		writeln( 'Pulling remote uploads to the local machine.' );
 	}
 	$rsync_options = ['options' => get( 'rsync_options' )];
-	download( '{{deploy_path}}/{{uploads_remote_path}}/', '{{local_path}}/{{uploads_local_path}}/', $rsync_options );
+	download( '{{deploy_path}}/{{uploads_remote_path}}/', './{{uploads_local_path}}/', $rsync_options );
 });
 
 desc( 'Import the remote database to local' );
 task( 'pull:database', function() {
 	if( empty( get( 'release_name' )))return;
 	$environments = unserialize( ENVIRONMENTS );
-	$stage = get( 'stage' );
+	$stage = explode( '-', get( 'stage' ));
+	$stage = array_shift( $stage );
 	if( empty( $environments[$stage] )) {
 		writeln( "Stage ($stage) not found in ENVIRONMENTS constant." );
 		return;
@@ -32,7 +33,7 @@ task( 'pull:database', function() {
 		writeln( 'Pulling remote database to the local machine.' );
 	}
 	cd( '{{deploy_path}}' );
-	run( "{{release_path}}/vendor/bin/wp db export - --path={{release_path}}/{{wp_cli_path}} | gzip > wpcli_database.sql.gz" );
+	run( "/usr/bin/wp db export - --path={{release_path}}/{{wp_cli_path}} | gzip > wpcli_database.sql.gz" );
 	download( '{{deploy_path}}/wpcli_database.sql.gz', 'wpcli_database.sql.gz' );
 	runLocally( 'gunzip < wpcli_database.sql.gz | wp db import - --path={{wp_cli_path}}' );
 	runLocally( "wp search-replace \"$remotehost\" \"{$environments['development']}\" --regex --skip-columns=guid --path={{wp_cli_path}}" );

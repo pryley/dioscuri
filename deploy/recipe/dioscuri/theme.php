@@ -11,14 +11,14 @@ desc( 'Deploy theme' );
 task( 'deploy:theme', function() {
 	$rsync_options = ['options' => get( 'rsync_options' )];
 	run( "mkdir -p {{release_path}}/theme/assets" );
-	upload( '{{local_path}}/theme/assets/', '{{release_path}}/theme/assets', $rsync_options );
-	upload( '{{local_path}}/pollux.yml', '{{release_path}}/pollux.yml', $rsync_options );
+	upload( './theme/assets/', '{{release_path}}/theme/assets', $rsync_options );
+	upload( './pollux.yml', '{{release_path}}/pollux.yml', $rsync_options );
 	run( "mv -f {{release_path}}/theme {{release_path}}/public/app/themes/{{application}}" );
 });
 
 desc( 'Deploy only the theme' );
 task( 'theme', function() {
 	$rsync_options = ['options' => get( 'rsync_options' )];
-	upload( '{{local_path}}/theme/', '{{release_path}}/public/app/themes/{{application}}', $rsync_options );
-	upload( '{{local_path}}/pollux.yml', '{{release_path}}/pollux.yml', $rsync_options );
+	upload( './theme/', '{{release_path}}/public/app/themes/{{application}}', $rsync_options );
+	upload( './pollux.yml', '{{release_path}}/pollux.yml', $rsync_options );
 });
