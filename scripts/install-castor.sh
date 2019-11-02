@@ -1,14 +1,14 @@
 #!/bin/sh
-# v1.0.2
+# v1.0.3
 
 DEFAULT_NAME=${PWD##*/}
-DIR_THEME=${PWD}/theme
 DIR_DEST=${PWD}/public/app/themes
+DIR_THEME=${PWD}/theme
 WHITE=`tput setaf 15`
-YELLOW=`tput setaf 3`
 WP=$PWD/vendor/bin/wp
 WP_CORE_DIR=$PWD/public/wp
 WP_PATH=--path=$WP_CORE_DIR
+YELLOW=`tput setaf 3`
 
 install_castor() {
     if [ ! -d $DIR_THEME ]; then

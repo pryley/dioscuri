@@ -1,13 +1,18 @@
 #!/bin/sh
-# v1.0.2
+# v1.0.3
 
 BOLD=`tput bold`
-UNDERLINE=`tput smul`
-NORMAL=`tput sgr0`
-WHITE=`tput setaf 15`
-GREY=`tput setaf 8`
-RED=`tput setaf 9`
+DIR_NAME=${PWD##*/}
+ENV_FILE=$PWD/env.php
 GREEN=`tput setaf 10`
+GREY=`tput setaf 8`
+NORMAL=`tput sgr0`
+RED=`tput setaf 9`
+UNDERLINE=`tput smul`
+WHITE=`tput setaf 15`
+WP=$PWD/vendor/bin/wp
+WP_CORE_DIR=$PWD/public/wp
+WP_PATH=--path=$WP_CORE_DIR
 YELLOW=`tput setaf 3`
 
 check_errors() {
@@ -80,13 +85,6 @@ install_wp() {
 }
 
 check_errors
-
-DIR_NAME=${PWD##*/}
-ENV_FILE=$PWD/env.php
-WP=$PWD/vendor/bin/wp
-WP_CORE_DIR=$PWD/public/wp
-WP_PATH=--path=$WP_CORE_DIR
-
 get_config
 
 echo "--------------------------------------------"

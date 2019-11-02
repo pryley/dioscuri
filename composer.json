@@ -88,14 +88,5 @@
       ]
     },
     "wordpress-install-dir": "public/wp"
-  },
-  "scripts": {
-    "post-install-cmd": [
-      "sh $(pwd)/scripts/install-wordpress.sh",
-      "sh $(pwd)/scripts/install-castor.sh",
-      "sh $(pwd)/scripts/cleanup.sh"
-    ],
-    "post-update-cmd": [
-    ]
   }
 }
