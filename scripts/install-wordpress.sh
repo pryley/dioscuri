@@ -56,26 +56,26 @@ set_config() {
 }
 
 install_wp() {
-    wp db create $WP_PATH > /dev/null 2>&1
-    if ! wp core is-installed $WP_PATH; then
-        wp core install $WP_PATH --url="http://${DIR_NAME}.test" --title="${DIR_NAME}" --admin_user="dev" --admin_password="dev" --admin_email="dev@${DIR_NAME}.test"
+    $WP db create $WP_PATH > /dev/null 2>&1
+    if ! $WP core is-installed $WP_PATH; then
+        $WP core install $WP_PATH --url="http://${DIR_NAME}.test" --title="${DIR_NAME}" --admin_user="dev" --admin_password="dev" --admin_email="dev@${DIR_NAME}.test"
         # set options
-        wp option update welcome 0 $WP_PATH
-        wp option update uploads_use_yearmonth_folders 0 $WP_PATH
-        wp option update blogdescription "" $WP_PATH
-        wp option update permalink_structure "/%postname%/" $WP_PATH
-        wp option update show_on_front page $WP_PATH
-        wp option update page_on_front 2 $WP_PATH
-        wp post delete 1 --force $WP_PATH
-        wp post update 2 --post_title=Home --post_name=home --post_content= $WP_PATH
-        wp user meta update 1 show_welcome_panel 0 $WP_PATH
-        wp widget deactivate $(wp widget list sidebar-1 --fields=id --format=ids $WP_PATH) $WP_PATH
+        $WP option update welcome 0 $WP_PATH
+        $WP option update uploads_use_yearmonth_folders 0 $WP_PATH
+        $WP option update blogdescription "" $WP_PATH
+        $WP option update permalink_structure "/%postname%/" $WP_PATH
+        $WP option update show_on_front page $WP_PATH
+        $WP option update page_on_front 2 $WP_PATH
+        $WP post delete 1 --force $WP_PATH
+        $WP post update 2 --post_title=Home --post_name=home --post_content= $WP_PATH
+        $WP user meta update 1 show_welcome_panel 0 $WP_PATH
+        $WP widget deactivate $($WP widget list sidebar-1 --fields=id --format=ids $WP_PATH) $WP_PATH
         # activate plugins
-        wp plugin activate autodescription $WP_PATH
-        wp plugin activate blackbar $WP_PATH
-        wp plugin activate imsanity $WP_PATH
-        wp plugin activate meta-box $WP_PATH
-        wp plugin activate pollux $WP_PATH
+        $WP plugin activate autodescription $WP_PATH
+        $WP plugin activate blackbar $WP_PATH
+        $WP plugin activate imsanity $WP_PATH
+        $WP plugin activate meta-box $WP_PATH
+        $WP plugin activate pollux $WP_PATH
     fi
 }
 
@@ -83,8 +83,9 @@ check_errors
 
 DIR_NAME=${PWD##*/}
 ENV_FILE=$PWD/env.php
-WP_CORE_DIR="$PWD/public/wp"
-WP_PATH='--path=public/wp'
+WP=$PWD/vendor/bin/wp
+WP_CORE_DIR=$PWD/public/wp
+WP_PATH=--path=$WP_CORE_DIR
 
 get_config
 

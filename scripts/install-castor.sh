@@ -2,11 +2,13 @@
 # v1.0.2
 
 DEFAULT_NAME=${PWD##*/}
-DIR_THEME="${PWD}/theme"
-DIR_DEST="${PWD}/public/app/themes"
+DIR_THEME=${PWD}/theme
+DIR_DEST=${PWD}/public/app/themes
 WHITE=`tput setaf 15`
 YELLOW=`tput setaf 3`
-WP_PATH='--path=public/wp'
+WP=$PWD/vendor/bin/wp
+WP_CORE_DIR=$PWD/public/wp
+WP_PATH=--path=$WP_CORE_DIR
 
 install_castor() {
     if [ ! -d $DIR_THEME ]; then
@@ -16,7 +18,8 @@ install_castor() {
         composer install
     fi
     ln -fhs $DIR_THEME "$DIR_DEST/$THEME"
-    wp theme activate $THEME $WP_PATH
+    cd ..
+    $WP theme activate $THEME $WP_PATH
 }
 
 echo "--------------------------------------------"
