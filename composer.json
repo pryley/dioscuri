@@ -3,7 +3,7 @@
   "type": "project",
   "license": "GPL-3.0+",
   "description": "WordPress boilerplate with castor and pollux",
-  "homepage": "https://geminilabs.io/dioscuri/",
+  "homepage": "https://github.com/pryley/dioscuri/",
   "authors": [
     {
       "name": "Paul Ryley",
@@ -29,7 +29,6 @@
     "php": ">=7.3",
     "composer/installers": "^1.7",
     "deployer/deployer": "^6.5",
-    "geminilabs/wp-password-bcrypt": "^1.0",
     "johnpbloch/wordpress": "^5.2",
     "pryley/better-thumbnails": "^1.0",
     "roots/soil": "^3.8",
@@ -41,6 +40,7 @@
     "wpackagist-plugin/imsanity": "^2.4",
     "wpackagist-plugin/machete": "^3.3",
     "wpackagist-plugin/meta-box": "^5.2",
+    "wpackagist-plugin/password-bcrypt": "^1.0",
     "wpackagist-plugin/paste-as-plain-text": "^1.0",
     "wpackagist-plugin/pollux": "^1.5",
     "wpackagist-plugin/post-type-archive-links": "^1.3",
@@ -59,10 +59,10 @@
     "installer-paths": {
       "public/app/mu-plugins/{$name}/": [
         "type:wordpress-muplugin",
-        "geminilabs/wp-password-bcrypt",
         "pryley/better-thumbnails",
         "roots/soil",
-        "roots/wp-stage-switcher"
+        "roots/wp-stage-switcher",
+        "wpackagist-plugin/password-bcrypt"
       ],
       "public/app/plugins/{$name}/": [
         "type:wordpress-plugin",
