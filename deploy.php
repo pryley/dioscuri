@@ -3,13 +3,13 @@
 namespace Deployer;
 
 require 'recipe/common.php';
-require __DIR__ . '/deploy/recipe/common.php';
-require __DIR__ . '/deploy/tasks/dioscuri.php';
+require __DIR__.'/deploy/recipe/common.php';
+require __DIR__.'/deploy/tasks/dioscuri.php';
 
-configuration( 'deploy/config.yml' );
-inventory( 'deploy/hosts.yml' );
+configuration('deploy/config.yml');
+inventory('deploy/hosts.yml');
 
-after( 'deploy:failed', 'deploy:unlock' );
+after('deploy:failed', 'deploy:unlock');
 
 // dep ssh
 // dep deploy [stage]    - Deploy your project

@@ -4,9 +4,9 @@
 define('WP_ENV', 'development');
 
 define('ENVIRONMENTS', serialize([
-	'production'  => 'https://example.com',
-	'staging'     => 'http://staging.example.com',
-	'development' => 'http://example.test',
+    'development' => 'http://example.test',
+    'production'  => 'https://example.com',
+    'staging'     => 'https://staging.example.com',
 ]));
 
 define('DB_NAME',     '');
