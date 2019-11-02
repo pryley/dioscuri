@@ -11,7 +11,7 @@
     "languages": "cd theme && npm run languages",
     "prod": "cd theme && npm run production",
     "production": "cd theme && npm run production",
-    "watch": "cd theme && npm run watch"
+    "watch": "cd theme && npm run watch",
     "watch-poll": "cd theme && npm run watch-poll"
   }
 }
