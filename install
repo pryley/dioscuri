@@ -39,4 +39,4 @@ sh ./scripts/install-castor.sh
 sh ./scripts/cleanup.sh
 
 rm -rf ./scripts
-rm ./install.sh
+rm ./install

@@ -1,5 +1,5 @@
 #!/bin/sh
-# v1.0.3
+# v2.0.0
 
 DEFAULT_NAME=${PWD##*/}
 DIR_DEST=${PWD}/public/app/themes

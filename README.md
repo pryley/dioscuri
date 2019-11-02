@@ -3,15 +3,18 @@
 This is a package to quickly setup a local WordPress installation on a Mac using [Laravel Valet](https://laravel.com/docs/master/valet#installation). It is assumed the you are using `.test` for the local TLD.
 
 ## Requirements
-- Laravel Valet
-- MySQL
+- [Laravel Valet](https://laravel.com/docs/6.x/valet)
+- MySQL 5.6
+- Perl
 - PHP 7.1
 
 ## Installation
 
-1. git clone https://github.com/pryley/dioscuri.git [projectdir]
-2. cd [projectdir]
-3. composer install
+```bash
+git clone https://github.com/pryley/dioscuri.git [projectdir]
+cd [projectdir]
+sh install
+```
 
 ## What's Installed
 

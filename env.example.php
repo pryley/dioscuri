@@ -14,7 +14,7 @@ define('DB_USER',     '');
 define('DB_PASSWORD', '');
 define('DB_HOST',     'localhost');
 
-$table_prefix = 'gl_';
+$table_prefix = 'wp_';
 
 // https://api.wordpress.org/secret-key/1.1/salt/
 define('AUTH_KEY',         'put your unique phrase here');
