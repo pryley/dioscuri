@@ -1,10 +1,17 @@
 {
   "private": true,
   "scripts": {
-    "build": "gulp build --cwd theme --production",
+    "build": "cd theme && npm run build",
     "composer": "composer update --working-dir theme",
-    "gulp": "gulp --cwd theme",
-    "images": "gulp images --cwd theme",
-    "watch": "gulp watch --cwd theme"
+    "dev": "cd theme && npm run development",
+    "development": "cd theme && npm run development",
+    "hot": "cd theme && npm run hot",
+    "images": "cd theme && npm run images",
+    "lang": "cd theme && npm run languages",
+    "languages": "cd theme && npm run languages",
+    "prod": "cd theme && npm run production",
+    "production": "cd theme && npm run production",
+    "watch": "cd theme && npm run watch"
+    "watch-poll": "cd theme && npm run watch-poll"
   }
 }

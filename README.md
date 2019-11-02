@@ -5,6 +5,7 @@ This is a package to quickly setup a local WordPress installation on a Mac using
 ## Requirements
 - Laravel Valet
 - MySQL
+- PHP 7.1
 
 ## Installation
 
@@ -14,36 +15,40 @@ This is a package to quickly setup a local WordPress installation on a Mac using
 
 ## What's Installed
 
+The following boilerplate theme is installed and activated:
+- [Castor](https://github.com/pryley/castor)
+
+The following plugins are installed and activated:
+- [Black Bar]https://wordpress.org/plugins/blackbar/
+- [Imsanity](https://wordpress.org/plugins/imsanity/)
+- [Meta Box](https://wordpress.org/plugins/meta-box/)
+- [Pollux](https://wordpress.org/plugins/pollux/)
+- [The SEO Framework](https://wordpress.org/plugins/autodescription/)
+
 The following plugins are installed:
-- [Black Bar]https://wordpress.org/plugins/blackbar/ @activated
 - [Disable Comments](https://wordpress.org/plugins/disable-comments/)
 - [Easy Updates Manager](https://wordpress.org/plugins/stops-core-theme-and-plugin-updates)
-- [Imsanity](https://wordpress.org/plugins/imsanity/) @activated
 - [Machete](https://wordpress.org/plugins/machete/)
-- [Meta Box](https://wordpress.org/plugins/meta-box/) @activated
+- [Optimize Database after Deleting Revisions](https://wordpress.org/plugins/rvg-optimize-database/)
 - [Paste as Plain Text](https://wordpress.org/plugins/paste-as-plain-text/)
-- [Pollux](https://wordpress.org/plugins/pollux/) @activated
-- [Post Type Archive Link](https://wordpress.org/plugins/post-type-archive-links/) @activated
+- [Post Type Archive Link](https://wordpress.org/plugins/post-type-archive-links/)
 - [Powerful Posts Per Page](https://wordpress.org/plugins/pppp/)
 - [Safe Redirect Manager](https://wordpress.org/plugins/safe-redirect-manager/)
+- [Safe SVG](https://wordpress.org/plugins/safe-svg/)
 - [SendGrid](https://wordpress.org/plugins/sendgrid-email-delivery-simplified/)
-- [Simple Custom Post Order](https://wordpress.org/plugins/simple-custom-post-order/) @activated
+- [Simple Custom Post Order](https://wordpress.org/plugins/simple-custom-post-order/)
 - [Simple Page Sidebars](https://wordpress.org/plugins/simple-page-sidebars)
 - [Simple Post Type Permalinks](https://wordpress.org/plugins/simple-post-type-permalinks)
-- [The SEO Framework – Extension Manager](https://wordpress.org/plugins/the-seo-framework-extension-manager/) @activated
-- [The SEO Framework](https://wordpress.org/plugins/autodescription/)
+- [Two Factor](https://wordpress.org/plugins/two-factor/)
 - [UpdraftPlus WordPress Backup Plugin](https://wordpress.org/plugins/updraftplus)
 - [User Menus](https://wordpress.org/plugins/user-menus)
 - [User Role Editor](https://wordpress.org/plugins/user-role-editor)
 
-The following must-use plugins are installed:
+The following Must-Use plugins are installed:
 - [Bedrock Autoloader](https://github.com/roots/bedrock/blob/master/web/app/mu-plugins/bedrock-autoloader.php)
 - [Disallow Indexing](https://github.com/roots/bedrock/blob/master/web/app/mu-plugins/disallow-indexing.php)
 - [Register Theme Directory](https://github.com/roots/bedrock/blob/master/web/app/mu-plugins/register-theme-directory.php)
 - [Soil](https://github.com/roots/soil)
 - [Stage Switcher](https://github.com/roots/wp-stage-switcher)
-- [WP Password bcrypt](https://github.com/geminilabs/wp-password-bcrypt)
-- [WP Thumb](https://github.com/geminilabs/wp-thumb)
-
-The following boilerplate theme is installed:
-- [Castor](https://github.com/pryley/castor)
+- [WP Password bcrypt](https://github.com/pryley/wp-password-bcrypt)
+- [WP Thumb](https://github.com/pryley/wp-thumb)

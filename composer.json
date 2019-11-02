@@ -1,7 +1,7 @@
 {
   "name": "pryley/dioscuri",
   "type": "project",
-  "license": "GPLv3",
+  "license": "GPL-3.0+",
   "description": "WordPress boilerplate with castor and pollux",
   "homepage": "https://geminilabs.io/dioscuri/",
   "authors": [
@@ -30,8 +30,8 @@
     "composer/installers": "^1.7.0",
     "deployer/deployer": "^6.5.0",
     "geminilabs/wp-password-bcrypt": "^1.0.1",
-    "geminilabs/wp-thumb": "^0.11",
     "johnpbloch/wordpress": "^5.2.4",
+    "pryley/better-thumbnails": "^1.0.0",
     "roots/soil": "^3.8.1",
     "roots/wp-stage-switcher": "^2.1.0",
     "wp-cli/wp-cli": "^2.3.0",
@@ -51,7 +51,6 @@
     "wpackagist-plugin/simple-page-sidebars": "1.2.1",
     "wpackagist-plugin/simple-post-type-permalinks": "2.0.5",
     "wpackagist-plugin/stops-core-theme-and-plugin-updates": "8.1.0",
-    "wpackagist-plugin/the-seo-framework-extension-manager": "1.5.4",
     "wpackagist-plugin/updraftplus": "1.16.17",
     "wpackagist-plugin/user-menus": "1.2.1",
     "wpackagist-plugin/user-role-editor": "4.52"
@@ -61,7 +60,7 @@
       "public/app/mu-plugins/{$name}/": [
         "type:wordpress-muplugin",
         "geminilabs/wp-password-bcrypt",
-        "geminilabs/wp-thumb",
+        "pryley/better-thumbnails",
         "roots/soil",
         "roots/wp-stage-switcher"
       ],
@@ -83,7 +82,6 @@
         "wpackagist-plugin/simple-page-sidebars",
         "wpackagist-plugin/simple-post-type-permalinks",
         "wpackagist-plugin/stops-core-theme-and-plugin-updates",
-        "wpackagist-plugin/the-seo-framework-extension-manager",
         "wpackagist-plugin/updraftplus",
         "wpackagist-plugin/user-menus",
         "wpackagist-plugin/user-role-editor"
