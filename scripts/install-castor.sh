@@ -1,12 +1,19 @@
 #!/bin/sh
 # v2.0.0
 
-DEFAULT_NAME=${PWD##*/}
-DIR_DEST=${PWD}/public/app/themes
-DIR_THEME=${PWD}/theme
+DIR=${PWD}
+DIR_NAME=${PWD##*/}
+
+if [ "$DIR" == "scripts" ]; then
+    DIR=$(cd ..;pwd)
+    DIR_NAME=${DIR##*/}
+fi
+
+DIR_DEST=${DIR}/public/app/themes
+DIR_THEME=${DIR}/theme
 WHITE=`tput setaf 15`
-WP=$PWD/vendor/bin/wp
-WP_CORE_DIR=$PWD/public/wp
+WP=$DIR/vendor/bin/wp
+WP_CORE_DIR=$DIR/public/wp
 WP_PATH=--path=$WP_CORE_DIR
 YELLOW=`tput setaf 3`
 
@@ -17,6 +24,7 @@ install_castor() {
         cd $DIR_THEME
         composer install
     fi
+    perl -i -pe "s|castor.test|$DIR_NAME.test|g" $DIR_THEME/webpack.mix.js
     ln -fhs $DIR_THEME "$DIR_DEST/$THEME"
     cd ..
     $WP theme activate $THEME $WP_PATH
@@ -26,8 +34,8 @@ echo "--------------------------------------------"
 echo "Install Castor                              "
 echo "--------------------------------------------"
 
-read -r -p "Enter the theme name [${YELLOW}${THEME_NAME:-$DEFAULT_NAME}${WHITE}]: " THEME
+read -r -p "Enter the theme name [${YELLOW}${THEME_NAME:-$DIR_NAME}${WHITE}]: " THEME
 
-THEME=${THEME:-${THEME_NAME:-$DEFAULT_NAME}}
+THEME=${THEME:-${THEME_NAME:-$DIR_NAME}}
 
 install_castor
