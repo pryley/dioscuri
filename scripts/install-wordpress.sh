@@ -33,6 +33,10 @@ YELLOW=`tput setaf 3`
 
 check_errors() {
     ERRORS=()
+    # Check that composer is installed
+    if ! which composer > /dev/null; then
+        ERRORS=("${ERRORS[@]}" "==>${WHITE} composer ${GREY}${UNDERLINE}https://getcomposer.org/${NORMAL}")
+    fi
     # Check that mysql is installed
     if ! which mysql > /dev/null; then
         ERRORS=("${ERRORS[@]}" "==>$WHITE mysql ${GREY}${UNDERLINE}https://dev.mysql.com/downloads/mysql/${NORMAL}")
@@ -79,6 +83,9 @@ set_config() {
 }
 
 install_wp() {
+    if [ ! -f "$DIR/composer.lock" ] || [ ! -d "$DIR/vendor" ]; then
+        composer install
+    fi
     $WP db create $WP_PATH > /dev/null 2>&1
     if ! $WP core is-installed $WP_PATH; then
         $WP core install $WP_PATH --url="http://$DOMAIN" --title="$DIR_NAME" --admin_user="$WPUSER" --admin_password="$WPPASS" --admin_email="$WPEMAIL"
