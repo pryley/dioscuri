@@ -24,15 +24,15 @@ The following boilerplate theme is installed and activated:
 The following plugins are installed and activated:
 - [Black Bar]https://wordpress.org/plugins/blackbar/
 - [Imsanity](https://wordpress.org/plugins/imsanity/)
-- [Meta Box](https://wordpress.org/plugins/meta-box/)
 - [Pollux](https://wordpress.org/plugins/pollux/)
-- [The SEO Framework](https://wordpress.org/plugins/autodescription/)
+- [Two Factor](https://wordpress.org/plugins/two-factor/)
 
 The following plugins are installed:
 - [Disable Comments](https://wordpress.org/plugins/disable-comments/)
 - [Easy Updates Manager](https://wordpress.org/plugins/stops-core-theme-and-plugin-updates)
 - [Machete](https://wordpress.org/plugins/machete/)
-- [Optimize Database after Deleting Revisions](https://wordpress.org/plugins/rvg-optimize-database/)
+- [Members](https://wordpress.org/plugins/members/)
+- [Meta Box](https://wordpress.org/plugins/meta-box/)
 - [Paste as Plain Text](https://wordpress.org/plugins/paste-as-plain-text/)
 - [Post Type Archive Link](https://wordpress.org/plugins/post-type-archive-links/)
 - [Powerful Posts Per Page](https://wordpress.org/plugins/pppp/)
@@ -42,16 +42,15 @@ The following plugins are installed:
 - [Simple Custom Post Order](https://wordpress.org/plugins/simple-custom-post-order/)
 - [Simple Page Sidebars](https://wordpress.org/plugins/simple-page-sidebars)
 - [Simple Post Type Permalinks](https://wordpress.org/plugins/simple-post-type-permalinks)
-- [Two Factor](https://wordpress.org/plugins/two-factor/)
+- [The SEO Framework](https://wordpress.org/plugins/autodescription/)
 - [UpdraftPlus WordPress Backup Plugin](https://wordpress.org/plugins/updraftplus)
 - [User Menus](https://wordpress.org/plugins/user-menus)
-- [User Role Editor](https://wordpress.org/plugins/user-role-editor)
 
 The following Must-Use plugins are installed:
 - [Bedrock Autoloader](https://github.com/roots/bedrock/blob/master/web/app/mu-plugins/bedrock-autoloader.php)
+- [Better Thumbnail Sizes](https://github.com/pryley/better-thumbnail-sizes)
 - [Disallow Indexing](https://github.com/roots/bedrock/blob/master/web/app/mu-plugins/disallow-indexing.php)
+- [Password bcrypt](https://wordpress.org/plugins/password-bcrypt/)
 - [Register Theme Directory](https://github.com/roots/bedrock/blob/master/web/app/mu-plugins/register-theme-directory.php)
 - [Soil](https://github.com/roots/soil)
 - [Stage Switcher](https://github.com/roots/wp-stage-switcher)
-- [WP Password bcrypt](https://github.com/pryley/wp-password-bcrypt)
-- [WP Thumb](https://github.com/pryley/wp-thumb)

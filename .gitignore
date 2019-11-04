@@ -26,7 +26,6 @@ env.php
 !/public/app/plugins/.gitkeep
 !/public/app/themes/.gitkeep
 !/public/app/uploads/.gitkeep
-!/public/app/options.php
 
 !.editorconfig
 !.gitattributes

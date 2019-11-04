@@ -104,6 +104,7 @@ install_wp() {
         $WP plugin activate blackbar $WP_PATH
         $WP plugin activate imsanity $WP_PATH
         $WP plugin activate pollux $WP_PATH
+        $WP plugin activate two-factor $WP_PATH
     fi
 }
 
