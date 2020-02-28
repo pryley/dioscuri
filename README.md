@@ -16,13 +16,35 @@ cd [projectdir]
 sh install
 ```
 
+## Directory Structure
+
+```
+dioscuri
+├── deploy                  This dir contains the deployment configuration
+├── public                  This is the webroot
+│   ├── app                 This dir replaces the wp-content dir
+│   │   ├── mu-plugins      Must-use plugins are installed here
+│   │   ├── plugins         Plugins are installed here
+│   │   ├── themes          Themes are installed here
+│   │   └── uploads         Uploads are stored here
+│   ├── wp                  This is the WordPress directory
+│   │   ├── wp-admin
+│   │   ├── wp-content      This dir is unused except for the default themes shipped with WordPress
+│   │   ├── wp-includes
+│   │   └── etc.
+│   └── wp-config.php       This file loads the env.php file which is located outside on the webroot
+├── deploy.php              This is the deployment script
+├── env.php                 This file is where you define your database information, etc.
+└── LocalValetDriver.php    This file allows you to use the dioscuri dir structure with Laravel Valet
+```
+
 ## What's Installed
 
 The following boilerplate theme is installed and activated:
 - [Castor](https://github.com/pryley/castor)
 
 The following plugins are installed and activated:
-- [Black Bar]https://wordpress.org/plugins/blackbar/
+- [Black Bar](https://wordpress.org/plugins/blackbar/)
 - [Imsanity](https://wordpress.org/plugins/imsanity/)
 - [Pollux](https://wordpress.org/plugins/pollux/)
 - [Two Factor](https://wordpress.org/plugins/two-factor/)
