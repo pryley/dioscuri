@@ -29,7 +29,7 @@
     "php": ">=7.4",
     "composer/installers": "^1.9",
     "deployer/deployer": "^6.8",
-    "johnpbloch/wordpress": "^5.4",
+    "johnpbloch/wordpress": "^5",
     "roots/soil": "^3.9",
     "roots/wp-stage-switcher": "^2.1",
     "wp-cli/wp-cli-bundle": "^2.4",
@@ -60,7 +60,6 @@
     "installer-paths": {
       "public/app/mu-plugins/{$name}/": [
         "type:wordpress-muplugin",
-        "pryley/better-thumbnail-sizes",
         "roots/soil",
         "roots/wp-stage-switcher",
         "wpackagist-plugin/password-bcrypt"

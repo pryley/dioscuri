@@ -3,10 +3,10 @@
 This is a package to quickly setup a local WordPress installation on a Mac using [Laravel Valet](https://laravel.com/docs/master/valet#installation). It is assumed the you are using `.test` for the local TLD.
 
 ## Requirements
-- [Laravel Valet](https://laravel.com/docs/6.x/valet)
+- [Laravel Valet](https://laravel.com/docs/master/valet)
 - MySQL 5.6
 - Perl
-- PHP 7.1
+- PHP 7.4
 
 ## Installation
 
@@ -70,7 +70,6 @@ The following plugins are installed:
 
 The following Must-Use plugins are installed:
 - [Bedrock Autoloader](https://github.com/roots/bedrock/blob/master/web/app/mu-plugins/bedrock-autoloader.php)
-- [Better Thumbnail Sizes](https://github.com/pryley/better-thumbnail-sizes)
 - [Disallow Indexing](https://github.com/roots/bedrock/blob/master/web/app/mu-plugins/disallow-indexing.php)
 - [Password bcrypt](https://wordpress.org/plugins/password-bcrypt/)
 - [Register Theme Directory](https://github.com/roots/bedrock/blob/master/web/app/mu-plugins/register-theme-directory.php)
