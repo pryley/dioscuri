@@ -11,6 +11,7 @@ fi
 
 DIR_DEST=${DIR}/public/app/themes
 DIR_THEME=${DIR}/theme
+INSTALL_CASTOR=no
 WHITE=`tput setaf 15`
 WP=$DIR/vendor/bin/wp
 WP_CORE_DIR=$DIR/public/wp
@@ -34,8 +35,12 @@ echo "--------------------------------------------"
 echo "Install Castor                              "
 echo "--------------------------------------------"
 
-read -r -p "Enter the theme name [${YELLOW}${THEME_NAME:-$DIR_NAME}${WHITE}]: " THEME
+read -r -p "Install the Castor theme? [${YELLOW}no/yes${WHITE}]: " INSTALLCASTOR
 
-THEME=${THEME:-${THEME_NAME:-$DIR_NAME}}
+if [ "$INSTALLCASTOR" == "yes" ]; then
+    read -r -p "Enter the theme name [${YELLOW}${THEME_NAME:-$DIR_NAME}${WHITE}]: " THEME
 
-install_castor
+    THEME=${THEME:-${THEME_NAME:-$DIR_NAME}}
+
+    install_castor
+fi
