@@ -30,7 +30,7 @@
     "composer/installers": "^1.9",
     "deployer/deployer": "^6.8",
     "johnpbloch/wordpress": "^5",
-    "roots/soil": "^3.9",
+    "roots/soil": "^4.0",
     "roots/wp-stage-switcher": "^2.1",
     "wp-cli/wp-cli-bundle": "^2.4",
     "wpackagist-plugin/autodescription": "dev-trunk",
